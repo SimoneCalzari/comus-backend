@@ -1,86 +1,59 @@
-# Laravel Auth Template
-```
-composer create-project laravel/laravel nomeprogetto
+<h1 align="center">
+
+    Comus Backend
+
+</h1>
+<!-- <h1 align="center">
+</h1> 
+-->
+
+<!-- <p align="center">
+  <a href="https://badge.fury.io/js/electron-markdownify">
+    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+         alt="Gitter">
+  </a>
+  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
+  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
+      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
+  </a>
+  <a href="https://www.paypal.me/AmitMerchant">
+    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
+  </a>
+</p> -->
+
+<p align="center">
+  <a href="#description">Description</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#used-technologies">Used technologies</a>
+</p>
+
+ <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+
+## Description
+
+Comus è una web app che permette di ordinare cibo a domicilio nella città di Napoli.
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+ git clone ('link of the repository')
+
+# Go into the repository
+ cd ('file name')
+
+# Install dependencies
+ npm install
+
+# Run the app
+ npm run dev
 ```
 
-# Installazione breeze
-```
-composer require laravel/breeze --dev
-```
+## Used technologies
 
-# Scaffold dell'autenticazione breeze/blade
-```
-php artisan breeze:install
-```
+This software uses the following technologies:
 
-- Which Breeze stack would you like to install? Blade with Alpine
-- Would you like dark mode support? Yes
-- Which testing framework do you prefer? PHPUnit
-
-
-## Eseguire i passaggi per installare bootstrap invece di tailwind
-```
-npm remove postcss
-npm remove tailwindcss
-npm i --save-dev sass
-npm i --save bootstrap @popperjs/core
-```
-Cancellare il file tailwind.config.js e postcss.config.js
-```
-rm tailwind.config.js
-rm postcss.config.js
-```
-
-Rinominiamo la cartella css in scss 
-```
-mv resources/css resources/scss
-```
-ed il file app.css in app.scss
-```
-mv resources/scss/app.css  resources/scss/app.scss
-```
-
-## Nel file app.scss
-Cancelliamo gli import di tailwind dal file app.scss e inseriamo:
-```
-@import "~bootstrap/scss/bootstrap";
-```
-
-## Nel file vite.config.js:
-
-- modifichiamo il percorso del css
-- aggiungiamo un alias per resources e per il bootstrap
-
-```
-import path from 'path';
-
-resolve: {
-        alias: {
-            '~resources': '/resources/',
-            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap')
-        }
-    },
-```
-
-## Nel file app.js 
-
-- togliere il codice che imposta alpine, lasciando solo la prima riga
-- importare app.css, bootstrap e img
-```
-import '~resources/scss/app.scss'
-import * as bootstrap from 'bootstrap'
-import.meta.glob([
-    '../img/**'
-])
-```
-
-## Inserire le views con bootstrap
-Cancellare tutti i file di default dalla cartella views e inserire i file presenti in questa repo
-
-## Partenza
-1. installare le dipendenze di npm e composer
-2. inserire dati nel file .env
-3. far partire le migrations
-4. avviare il server (php e node)
-
-Buon lavoro!
+-   [PHP](https://it.wikipedia.org/wiki/PHP)
+-   [Laravel](https://laravel.com/)
