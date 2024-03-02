@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +18,6 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -41,13 +41,16 @@ class RestaurantController extends Controller
         if (!empty($data['img'])) {
             $restaurant->img = Storage::put('uploads', $data['img']);
         }
+
+        $restaurant->user_id = Auth::user()->id;
+
         $restaurant->save();
 
         if (isset($data['types'])) {
             $restaurant->types()->sync($data['types']);
         }
 
-        return redirect()->route('admin.dashboard'); //todo ->message('x')
+        return redirect()->route('admin.dashboard');
     }
 
     /**

@@ -9,6 +9,8 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['image', 'types'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
