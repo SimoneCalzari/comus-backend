@@ -21,6 +21,7 @@
                                 </li>
                             @endforeach
                         </ul>
+                        <a href="{{ route('admin.restaurants.create')}} ">Crea ristorante</a>
                     </div>
                 </div>
             </div>
