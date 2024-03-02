@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
+
+    {{-- Validation --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    {{-- Validation --}}
+
+
     <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
