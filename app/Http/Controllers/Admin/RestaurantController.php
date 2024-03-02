@@ -6,6 +6,9 @@ use App\Models\Restaurant;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
+use App\Models\Type;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -14,7 +17,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -22,7 +25,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $types = Type::all();
+        return view('admin.restaurants.create', compact('types'));
     }
 
     /**
@@ -30,7 +34,20 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        //
+        $data = $request->validated();
+        $restaurant = new Restaurant();
+        $restaurant->fill($data);
+        $restaurant->slug = Str::of($restaurant->title)->slug('-');
+        if (!empty($data['img'])) {
+            $restaurant->img = Storage::put('uploads', $data['img']);
+        }
+        $restaurant->save();
+
+        if (isset($data['types'])) {
+            $restaurant->types()->sync($data['types']);
+        }
+
+        return redirect()->route('admin.dashboard'); //todo ->message('x')
     }
 
     /**
