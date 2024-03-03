@@ -24,21 +24,28 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'name' => ['required', 'max:50'],
             'address' => ['required', 'max:100', 'unique:restaurants,address'],
-            'phone_number' => ['required', 'max:20'],
-            'VAT' => ['required', 'max:11'],
+            'phone_number' => ['required', 'size:10'],
+            'VAT' => ['required', 'size:11'],
             'img' => ['required', 'max:200', 'image'],
-            'types' => ['exists:types,id']
+
         ];
     }
-    // public function messages()
-    // {
-    //     return [
+    public function messages()
+    {
+        return [
 
-    //         'title.required' => 'Il titolo è obbligatorio.',
-    //         'title.max' => 'Il titolo non può superare i :max caratteri.',
-    //         'status.required' => 'Lo stato è obbligatorio.',
-    //         'status.max' => 'Lo stato non può superare i :max caratteri.',
-    //         'start_date.required' => 'La data è obbligatoria.',
-    //     ];
-    // }
+            'name.required' => 'Il nome è obbligatorio.',
+            'name.max' => 'Il nome non può superare :max caratteri.',
+            'address.required' => 'L\' indirizzo è obbligatorio.',
+            'address.max' => 'L\' indirizzo non può superare :max caratteri.',
+            'address.unique' => 'E\' già presente un altro ristorante con lo stesso indizizzo',
+            'phone_number.required' => 'Il numero di telefono è obbligatorio.',
+            'phone_number.size' => 'Il numero di telefono non è valido.',
+            'VAT.required' => 'La Partita IVA è obbligatoria.',
+            'VAT.size' => 'La Partita IVA non è valida.',
+            'img.required' => 'L\'immagine è obbligatoria.',
+            'img.max' => 'L\' url dell\'immagine non può superare :max caratteri.',
+
+        ];
+    }
 }
