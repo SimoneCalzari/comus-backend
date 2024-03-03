@@ -27,6 +27,7 @@ class StoreRestaurantRequest extends FormRequest
             'phone_number' => ['required', 'size:10'],
             'VAT' => ['required', 'size:11'],
             'img' => ['required', 'max:200', 'image'],
+            'types' => ['required', 'exists:types,id']
 
         ];
     }
@@ -42,9 +43,10 @@ class StoreRestaurantRequest extends FormRequest
             'phone_number.required' => 'Il numero di telefono è obbligatorio.',
             'phone_number.size' => 'Il numero di telefono non è valido.',
             'VAT.required' => 'La Partita IVA è obbligatoria.',
-            'VAT.size' => 'La Partita IVA non è valida.',
+            'VAT.size' => 'La Partita IVA deve essere :size numeri.',
             'img.required' => 'L\'immagine è obbligatoria.',
             'img.max' => 'L\' url dell\'immagine non può superare :max caratteri.',
+            'types.required' => 'Il tipo è obbligatorio.',
 
         ];
     }
