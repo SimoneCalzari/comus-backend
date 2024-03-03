@@ -37,7 +37,7 @@ class RestaurantController extends Controller
         $data = $request->validated();
         $restaurant = new Restaurant();
         $restaurant->fill($data);
-        $restaurant->slug = Str::of($restaurant->title)->slug('-');
+        $restaurant->slug = Str::of($restaurant->name)->slug('-');
         if (!empty($data['img'])) {
             $restaurant->img = Storage::put('uploads', $data['img']);
         }
