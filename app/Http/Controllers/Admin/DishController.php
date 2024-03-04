@@ -58,7 +58,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-       
+       return view('admin.dishes.show', compact('dish'));
     }
     /**
      * Show the form for editing the specified resource.
