@@ -23,8 +23,12 @@
                                 @foreach ($restaurants as $restaurant)
                                     <div class="col">
                                         <div class="card" style="width: 18rem;">
-                                            <img src="{{ $restaurant->img }}" class="card-img-top"
-                                                alt="img-{{ $restaurant->id }}">
+                                            @if ($restaurant->img)
+                                                <img src="{{ asset('storage/' . $restaurant->img) }}" class="card-img-top" alt="img-{{ $restaurant->id }}">
+                                            @else
+                                                <img src="https://beachlife.com/image/wiser2/1445570/sfeer_afbeeldingen/730/1009/6/beachlife-black-embroidery-bikinitop-109a-bikinibroekje-206b-top-jpg-8.jpg"
+                                                    alt="no-image">
+                                            @endif
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $restaurant->name }}</h5>
                                                 <p class="card-text">{{ $restaurant->address }}</p>

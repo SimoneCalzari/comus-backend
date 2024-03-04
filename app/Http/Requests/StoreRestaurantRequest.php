@@ -24,9 +24,9 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'name' => ['required', 'max:50'],
             'address' => ['required', 'max:100', 'unique:restaurants,address'],
-            'phone_number' => ['required', 'size:10', 'numeric'],
-            'VAT' => ['required', 'size:11', 'numeric'],
-            'img' => ['required', 'max:200', 'image'],
+            'phone_number' => ['required', 'size:10'],
+            'VAT' => ['required', 'size:11'],
+            'img' => ['required', 'max:10240', 'image'],
             'types' => ['required', 'exists:types,id']
 
         ];
