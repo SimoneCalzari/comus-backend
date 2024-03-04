@@ -47,10 +47,12 @@ class DishController extends Controller
             $dish->img = Storage::put('uploads', $data['img']);
         }
 
-        $dish->restaurant_id = Auth::user()->id;
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+
+        $dish->restaurant_id = $restaurant->id;
 
         $dish->save();
-        return redirect()->route('admin.dishes.index')->with('new_dish', "Il piatto $dish->name  è stato aggiunto ai tuoi piatti");
+        return redirect()->route('admin.dishes.index')->with('message', "Il piatto $dish->name  è stato aggiunto ai tuoi piatti");
     }
 
     /**

@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+
+    
     <div class="container">
+
         <div class="row justify-content-center">
             <div class="col-md-12 mt-4">
                 <div class="card">
@@ -48,4 +51,8 @@
             </div>
         </div>
     </div>
+
+    @if($restaurants->count() < 1)
+    <a href="{{ route('admin.restaurants.create')}}" class="btn btn-primary">Crea</a>
+    @endif
 @endsection
