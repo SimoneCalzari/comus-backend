@@ -43,6 +43,12 @@ class DishController extends Controller
         $data = $request->validated();
         $dish = new Dish();
         $dish->fill($data);
+
+        if ($data['is_visible'] == 1) {
+            $dish->is_visible = true;
+        } else {
+            $dish->is_visible = false;
+        }
         if (!empty($data['img'])) {
             $dish->img = Storage::put('uploads', $data['img']);
         }
@@ -79,7 +85,7 @@ class DishController extends Controller
         $data = $request->validated();
 
 
-        if ($data['is_visible'] === 1) {
+        if ($data['is_visible'] == 1) {
             $dish->is_visible = true;
         } else {
             $dish->is_visible = false;
