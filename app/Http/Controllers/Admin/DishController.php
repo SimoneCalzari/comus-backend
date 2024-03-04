@@ -21,7 +21,7 @@ class DishController extends Controller
     {
         $restaurants = Restaurant::where('user_id', Auth::user()->id)->first();
         $dishes = Dish::where('restaurant_id', $restaurants->id)->get();
-        return view ('admin.dishes.index' , compact('dishes'));
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
@@ -58,14 +58,16 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-       return view('admin.dishes.show', compact('dish'));
+        return view('admin.dishes.show', compact('dish'));
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Dish $dish)
     {
-        //
+
+
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -73,7 +75,20 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-        //
+        $data = $request->validated();
+
+        if (!empty($data['img'])) {
+            if ($dish->img) {
+                Storage::delete($dish->img);
+            }
+            $dish->img = Storage::put('uploads', $data['img']);
+        }
+
+        $dish->update($data);
+
+
+
+        return redirect()->route('admin.dishes.index', $dish)->with('message', 'Modifica avvenuta con successo!');
     }
 
     /**
@@ -81,6 +96,12 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+
+        if ($dish->img) {
+            Storage::delete($dish->img);
+        }
+
+        return redirect()->route('admin.dishes.index')->with('message', 'Cancellato con successo!');
     }
 }

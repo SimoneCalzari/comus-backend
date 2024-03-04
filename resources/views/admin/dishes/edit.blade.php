@@ -3,18 +3,20 @@
 @section('content')
     <div class="container pb-5">
         <header>
-            <h2 class="py-2">Aggiungi un nuovo piatto</h2>
+            <h2 class="py-2">modifica piatto</h2>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
 
 
-        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.dishes.update', $dish) }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            @method('PUT')
 
             {{-- Nome --}}
             <div class="mb-2">
                 <label for="name" class="form-label fw-medium">Nome piatto<span class="fs-5 px-1">*</span></label>
-                <input type="text" class="form-control @error('name') is-invalid  @enderror" name="name" value="{{ old('name') }}" required>
+                <input type="text" class="form-control @error('name') is-invalid  @enderror" name="name" value="{{ old('name', $dish->name) }}" required>
             </div>
             @error('name')
                 @foreach ($errors->get('name') as $error)
@@ -27,7 +29,7 @@
             {{-- Ingredienti --}}
             <div class="mb-2">
                 <label for="ingredients" class="form-label fw-medium">Ingredienti</label>
-                <input type="text" class="form-control @error('ingredients') is-invalid  @enderror" name="ingredients" value="{{ old('ingredients') }}">
+                <input type="text" class="form-control @error('ingredients') is-invalid  @enderror" name="ingredients" value="{{ old('ingredients', $dish->ingredients) }}">
             </div>
             @error('ingredients')
                 @foreach ($errors->get('ingredients') as $error)
@@ -40,7 +42,7 @@
             {{-- Price --}}
             <div class="mb-2">
                 <label for="price" class="form-label fw-medium">Prezzo<span class="fs-5 px-1">*</span></label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid  @enderror" name="price" value="{{ old('price') }}" required min="1">
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid  @enderror" name="price" value="{{ old('price', $dish->price) }}" required min="1">
             </div>
             @error('price')
                 @foreach ($errors->get('price') as $error)
@@ -63,7 +65,7 @@
                 @endforeach
             @enderror
 
-            <button type="submit" class="btn btn-primary mt-2 me-3">Crea</button>
+            <button type="submit" class="btn btn-primary mt-2 me-3">Modifica</button>
             {{-- <button type="reset" class="btn btn-warning mt-2">Svuota Campi</button> --}}
         </form>
 
