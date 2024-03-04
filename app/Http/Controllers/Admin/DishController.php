@@ -79,10 +79,10 @@ class DishController extends Controller
         $data = $request->validated();
 
 
-        if ($data['is_visible'] === 1) {
-            $dish->is_visible = 1;
+        if ($data['is_visible'] = 1) {
+            $dish->is_visible = true;
         } else {
-            $dish->is_visible = 0;
+            $dish->is_visible = false;
         }
 
 

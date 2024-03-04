@@ -28,4 +28,18 @@ class StoreDishRequest extends FormRequest
             'img' => ['nullable', 'max:10240', 'image'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+
+            'name.required' => 'Il nome è obbligatorio.',
+            'name.string' => 'Il nome è deve essere una stringa di lettere.',
+            'name.max' => 'Il nome non può superare :max caratteri.',
+            'ingredients.max' => 'La lista di ingredienti non può superare :max caratteri.',
+            'price.required' =>
+            'Il prezzo è obbligatorio.',
+            'img.max' => 'L\'immagine deve pesare meno di 10Mb'
+        ];
+    }
 }

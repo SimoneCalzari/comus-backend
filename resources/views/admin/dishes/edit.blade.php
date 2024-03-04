@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+    <a class="mt-5" href="{{ route('admin.dishes.index') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
     <div class="container pb-5">
         <header>
-            <h2 class="py-2">modifica piatto</h2>
+            <h2 class="text-center text-uppercase py-4">modifica piatto</h2>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
 
@@ -55,17 +56,18 @@
             {{-- Visible --}}
             <span class="fs-5 px-1">Disponibilità:</span>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault1" value="1" checked>
+                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault1" value="1" {{ $dish->is_visible == 1 ? 'checked' : '' }}>
                 <label class="form-check-label" for="flexRadioDefault1">
                     Si
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault2" value="0">
+                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault2" value="0" {{ $dish->is_visible == 0 ? 'checked' : '' }}>
                 <label class="form-check-label" for="flexRadioDefault2">
                     No
                 </label>
             </div>
+
 
             {{-- Immagine --}}
             <div class="mb-2">
@@ -80,7 +82,7 @@
                 @endforeach
             @enderror
 
-            <button type="submit" class="btn btn-primary mt-2 me-3">Modifica</button>
+            <button type="submit" class="btn btn-warning mt-2 me-3">Modifica</button>
             {{-- <button type="reset" class="btn btn-warning mt-2">Svuota Campi</button> --}}
         </form>
 
