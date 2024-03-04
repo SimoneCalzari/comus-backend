@@ -8,8 +8,8 @@
         <h1 class="text-center py-4 text-uppercase">{{ $dish->name }}</h1>
 
         <div class="row d-flex justify-content-center">
-            <div class="col-10">
-                <div class="card mt-5">
+            <div class="col-12">
+                <div class="card mt-4">
                     <div class="row">
                         <div class="col-md-5">
                             @if ($dish->img == null)
