@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone_number', 20);
             $table->string('VAT', 11);
             $table->string('img', 200);
-            $table->string('slug', 20);
+            $table->string('slug', 50);
             $table->timestamps();
         });
     }
