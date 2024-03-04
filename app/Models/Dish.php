@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $guarded = ['img'];
 
     public function restaurant()
     {
