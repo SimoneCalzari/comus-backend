@@ -52,6 +52,21 @@
                 @endforeach
             @enderror
 
+            {{-- Visible --}}
+            <span class="fs-5 px-1">Disponibilità:</span>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault1" value="1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_visible" id="flexRadioDefault2" value="0">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    No
+                </label>
+            </div>
+
             {{-- Immagine --}}
             <div class="mb-2">
                 <label for="image" class="form-label fw-medium">Inserisci un'immagine<span class="fs-5 px-1">*</span></label>

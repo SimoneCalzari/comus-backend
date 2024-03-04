@@ -21,10 +21,12 @@ class UpdateDishRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
             'name' => ['required', 'string', 'max:50'],
             'ingredients' => ['nullable', 'string', 'max:255'],
             'price' => ['required', 'decimal: 0,2'],
+            'is_visible' => ['required'],
             'img' => ['nullable', 'max:10240', 'image'],
         ];
     }
