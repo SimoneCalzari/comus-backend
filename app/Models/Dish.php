@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
-    protected $guarded = ['img'];
+    protected $guarded = ['img', 'is_visible'];
 
     public function restaurant()
     {

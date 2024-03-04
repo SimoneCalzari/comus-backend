@@ -67,8 +67,6 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-
-
         return view('admin.dishes.edit', compact('dish'));
     }
 
@@ -77,7 +75,16 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
+
         $data = $request->validated();
+
+
+        if ($data['is_visible'] === 1) {
+            $dish->is_visible = 1;
+        } else {
+            $dish->is_visible = 0;
+        }
+
 
         if (!empty($data['img'])) {
             if ($dish->img) {
