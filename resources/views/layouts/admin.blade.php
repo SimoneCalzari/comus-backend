@@ -23,13 +23,13 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
-    <div id="app">
+<body class="vh-100">
+    <div id="app" class="vh-100 d-flex flex-column">
         @include('admin.shared.navbar')
-        <div class="container-fluid vh-100">
+        <div class="container-fluid overflow-hidden flex-grow-1">
             <div class="row h-100">
                 @include('admin.shared.sidebar')
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 overflow-auto h-100">
                     @yield('content')
                 </main>
             </div>

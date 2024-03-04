@@ -50,7 +50,7 @@ class RestaurantController extends Controller
             $restaurant->types()->sync($data['types']);
         }
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.dashboard')->with('new_restaurant', "Il ristorante $restaurant->name  è stato aggiunto ai tuoi ristoranti");
     }
 
     /**

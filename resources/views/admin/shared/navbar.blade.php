@@ -8,7 +8,7 @@
     </div>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap ms-2">
-            <a class="nav-link" href="{{ route('logout') }}"
+            <a class="nav-link pe-2" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
