@@ -15,7 +15,8 @@
             {{-- Nome --}}
             <div class="mb-2">
                 <label for="name" class="form-label fw-medium">Nome piatto<span class="fs-5 px-1">*</span></label>
-                <input type="text" class="form-control @error('name') is-invalid  @enderror" name="name" value="{{ old('name') }}" required>
+                <input type="text" class="form-control @error('name') is-invalid  @enderror" name="name"
+                    value="{{ old('name') }}" required>
             </div>
             @error('name')
                 @foreach ($errors->get('name') as $error)
@@ -28,7 +29,8 @@
             {{-- Ingredienti --}}
             <div class="mb-2">
                 <label for="ingredients" class="form-label fw-medium">Ingredienti</label>
-                <input type="text" class="form-control @error('ingredients') is-invalid  @enderror" name="ingredients" value="{{ old('ingredients') }}">
+                <input type="text" class="form-control @error('ingredients') is-invalid  @enderror" name="ingredients"
+                    value="{{ old('ingredients') }}">
             </div>
             @error('ingredients')
                 @foreach ($errors->get('ingredients') as $error)
@@ -41,7 +43,8 @@
             {{-- Price --}}
             <div class="mb-2">
                 <label for="price" class="form-label fw-medium">Prezzo<span class="fs-5 px-1">*</span></label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid  @enderror" name="price" value="{{ old('price') }}" required min="1">
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid  @enderror"
+                    name="price" value="{{ old('price') }}" required min="0.01">
             </div>
             @error('price')
                 @foreach ($errors->get('price') as $error)
@@ -50,10 +53,26 @@
                     </div>
                 @endforeach
             @enderror
+            {{-- Visible --}}
+            <div class="fs-5 py-2">Visibilità sul sito:</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_visible" id="yes-visible" value="1"
+                    {{ old('is_visible') == 1 ? 'checked' : '' }}>
+                <label class="form-check-label" for="yes-visible">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_visible" id="no-visible" value="0"
+                    {{ old('is_visible') == 0 ? 'checked' : '' }}>
+                <label class="form-check-label" for="no-visible">
+                    No
+                </label>
+            </div>
 
             {{-- Immagine --}}
             <div class="mb-2">
-                <label for="image" class="form-label fw-medium">Inserisci un'immagine<span class="fs-5 px-1">*</span></label>
+                <label for="image" class="form-label fw-medium">Inserisci un'immagine</label>
                 <input class="form-control @error('img') is-invalid  @enderror" type="file" name="img">
             </div>
             @error('img')
@@ -65,7 +84,6 @@
             @enderror
 
             <button type="submit" class="btn btn-primary mt-2 me-3">Crea</button>
-            {{-- <button type="reset" class="btn btn-warning mt-2">Svuota Campi</button> --}}
         </form>
 
     </div>

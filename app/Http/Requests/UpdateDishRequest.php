@@ -25,8 +25,8 @@ class UpdateDishRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:50'],
             'ingredients' => ['nullable', 'string', 'max:255'],
-            'price' => ['required', 'decimal: 0,2'],
-            'is_visible' => ['required'],
+            'price' => ['required', 'decimal: 0,2', 'numeric', 'min:0.01'],
+            'is_visible' => ['required', 'boolean'],
             'img' => ['nullable', 'max:10240', 'image'],
 
         ];
@@ -37,12 +37,16 @@ class UpdateDishRequest extends FormRequest
         return [
 
             'name.required' => 'Il nome è obbligatorio.',
-            'name.string' => 'Il nome è deve essere una stringa di lettere.',
+            'name.string' => 'Il nome deve essere una stringa di lettere.',
             'name.max' => 'Il nome non può superare :max caratteri.',
-            'ingredients.max' => 'La lista di ingredienti non può superare :max caratteri.',
-            'price.required' =>
-            'Il prezzo è obbligatorio.',
-            'is_visible.required' => 'La disponibilità è obbligatoria',
+            'ingredients.max' => 'La lista degli ingredienti non può superare :max caratteri',
+            'ingredients.string' => 'La lista degli ingredienti deve essere una stringa di lettere',
+            'price.required' => 'Il prezzo è obbligatorio.',
+            'price.numeric' => 'Il prezzo deve essere un numero, basta giocare sull\'inspector',
+            'price.decimal' => 'Il prezzo deve avere da 0 a 2 cifre decimali.',
+            'price.min' => 'Il prezzo deve essere positivo',
+            'img.max' => 'L\' url dell\'immagine non può superare :max caratteri.',
+            'img.image' => 'Il file deve essere un\'immagine con uno tra i seguenti formati jpg, jpeg, png, bmp, gif, svg, o webp',
             'img.max' => 'L\'immagine deve pesare meno di 10Mb'
         ];
     }
