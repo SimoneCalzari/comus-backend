@@ -33,7 +33,7 @@
                                                 <h5 class="card-title">{{ $restaurant->name }}</h5>
                                                 <p class="card-text">{{ $restaurant->address }}</p>
                                                 <p class="card-text">{{ $restaurant->phone_number }}</p>
-                                                <a href="#" class="btn btn-primary">Lista Piatti</a>
+                                                <a href="{{route('admin.dishes.index')}}" class="btn btn-primary">Lista Piatti</a>
                                             </div>
                                         </div>
                                     </div>

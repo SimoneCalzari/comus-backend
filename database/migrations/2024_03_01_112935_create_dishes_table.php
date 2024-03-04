@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('restaurant_id')->constrained()->cascadeOnDelete();
             $table->string('name', 50);
-            $table->string('ingredients', 255)->unique();
-            $table->decimal('sell', 5, 2);
-            $table->string('VAT', 11);
+            $table->string('ingredients', 255)->nullable();
+            $table->decimal('price', 5, 2)->unsigned();
             $table->boolean('is_visible')->default(1);
-            $table->string('img', 200);
+            $table->string('img', 200)->nullable();
             $table->timestamps();
         });
     }

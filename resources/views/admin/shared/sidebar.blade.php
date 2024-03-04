@@ -16,6 +16,12 @@
                                     <i class="fa-solid fa-shop me-1"></i> Crea Ristorante
                                 </a>
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.create' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.dishes.create') }}">
+                                    <i class="fa-solid fa-shop me-1"></i> Crea piatto
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

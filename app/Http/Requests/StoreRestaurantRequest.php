@@ -22,8 +22,8 @@ class StoreRestaurantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:50'],
-            'address' => ['required', 'max:100', 'unique:restaurants,address'],
+            'name' => ['required', 'string', 'max:50'],
+            'address' => ['required', 'string', 'max:100', 'unique:restaurants,address'],
             'phone_number' => ['required', 'size:10'],
             'VAT' => ['required', 'size:11'],
             'img' => ['required', 'max:10240', 'image'],
