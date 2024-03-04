@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+    <a class="mt-5" href="{{ route('admin.dashboard') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
     <div class="container pb-5">
         <header>
-            <h2 class="py-2">Aggiungi un nuovo piatto</h2>
+            <h2 class="text-center text-uppercase py-4">Aggiungi un nuovo piatto</h2>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
 
