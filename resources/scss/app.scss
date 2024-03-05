@@ -1,21 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+//importazione partials di stile
 @import "_partials/reset.scss";
+@import "_partials/variables.scss";
 @import "_partials/common.scss";
-
-.my-admin-image {
-    width: calc(100% / 2);
-}
-
-// navbar
-.custom-sidebar {
-    background-color: #34173b;
-}
-
-// sidebar
-.custom-navbar {
-    background-color: #34173b;
-}
-
-.admin-bg {
-    background-color: #f7f3f6;
-}
+@import "_partials/utilities.scss";
