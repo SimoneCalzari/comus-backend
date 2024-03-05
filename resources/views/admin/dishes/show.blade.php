@@ -34,7 +34,7 @@
                                 @if ($dish->is_visible == '1')
                                     <span class="text-success fw-semibold">Disponibile</span>
                                 @else
-                                    <span class="text-danger fw-semibold">NON disponibile</span>
+                                    <span class="text-danger fw-semibold">Non disponibile</span>
                                 @endif
 
 

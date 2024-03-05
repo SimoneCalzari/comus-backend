@@ -1,15 +1,37 @@
+/************* 
+COMMON
+**************/
+
 .go-back {
     margin-top: 20px;
 
     a {
-        color: #ee7c2f;
+        color: $primary;
     }
 }
 
 .main-color {
-    color: #34173b;
+    color: $text;
 }
 
 .bg-selected {
-    background-color: #412f46;
+    background-color: #62466a; //trovare giusta alternativa di hover
+}
+
+.my-admin-image {
+    width: calc(100% / 2);
+}
+
+// navbar
+.custom-sidebar {
+    background-color: $secondary;
+}
+
+// sidebar
+.custom-navbar {
+    background-color: $secondary;
+}
+
+.admin-bg {
+    background-color: $white;
 }
