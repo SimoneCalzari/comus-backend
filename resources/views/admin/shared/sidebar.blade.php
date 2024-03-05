@@ -6,7 +6,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-selected' : '' }}" href="{{ route('admin.dashboard') }}">
-                                    <i class="fa-solid fa-table-columns me-1"></i> Dashboard
+                                    <i class="fa-solid fa-table-columns me-1"></i> Area amministrazione
                                 </a>
                             </li>
                             <li class="nav-item">

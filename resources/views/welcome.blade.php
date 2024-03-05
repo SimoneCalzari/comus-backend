@@ -6,10 +6,10 @@
                 <img class="w-25" src="/img/comus.svg" alt="logo">
             </div>
             <h1 class="main-color display-5 fw-bold">
-                Benvenuto in COMUS
+                Benvenuto in Comus
             </h1>
 
-            <p class="col-md-8 fs-4">Banchetta come gli Dei !</p>
+            <p class="col-md-8 fs-4">Il tuo cibo da Dio!</p>
 
         </div>
         <div class="content">
