@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    
     <div class="container">
 
         <div class="row justify-content-center">
@@ -37,11 +35,21 @@
                                                 <p class="card-text">{{ $restaurant->address }}</p>
                                                 <p class="card-text">{{ $restaurant->phone_number }}</p>
                                                 <p>
-                                                @foreach ($restaurant->types as $type)
-                                                    <span>{{ $type->name_type }}</span>
-                                                @endforeach
+                                                    @foreach ($restaurant->types as $type)
+                                                        <span>{{ $type->name_type }}</span>
+                                                    @endforeach
                                                 </p>
-                                                <a href="{{route('admin.dishes.index')}}" class="btn btn-primary">Lista Piatti</a>
+                                                <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Lista Piatti</a>
+                                                {{-- delete --}}
+                                                <form action="{{ route('admin.restaurants.destroy', $restaurant) }}" method="POST" class="d-inline">
+                                                    <!--token-->
+                                                    @csrf
+                                                    <!--/token-->
+                                                    <!--method per cancellare-->
+                                                    @method('DELETE')
+                                                    <!--/method per cancellare-->
+                                                    <button class="btn btn-danger">Elimina</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +65,7 @@
         </div>
     </div>
 
-    @if($restaurants->count() < 1)
-    <a href="{{ route('admin.restaurants.create')}}" class="btn btn-primary">Crea</a>
+    @if ($restaurants->count() < 1)
+        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea</a>
     @endif
 @endsection

@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a class="mt-5" href="{{ route('admin.dashboard') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
+    <div class="go-back">
+        <a href="{{ route('admin.dashboard') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
+    </div>
     <h2 class="text-center pt-3 text-uppercase">Lista Piatti</h2>
 
     {{-- pop up --}}
