@@ -65,7 +65,9 @@
         </div>
     </div>
 
-    @if ($restaurants->count() < 1)
-        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea</a>
-    @endif
+    <div class="container d-flex justify-content-center mt-3">
+        @if ($restaurants->count() < 1)
+            <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Aggiungi il tuo ristorante</a>
+        @endif
+    </div>
 @endsection
