@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a class="mt-5" href="{{ route('admin.dishes.index') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
+    <div class="go-back">
+        <a href="{{ route('admin.dishes.index') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
+    </div>
     <div class="container d-flex flex-column align-items-center">
 
         {{-- titolo --}}
