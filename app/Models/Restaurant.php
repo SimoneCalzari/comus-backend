@@ -9,7 +9,7 @@ class Restaurant extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['image', 'types'];
+    protected $guarded = ['img', 'types'];
 
     public function user()
     {

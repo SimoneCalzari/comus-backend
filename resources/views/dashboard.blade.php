@@ -25,13 +25,14 @@
                                     <div class="col">
                                         <div class="card" style="width: 18rem;">
                                             @if ($restaurant->img)
-                                                <img src="{{ asset('storage/' . $restaurant->img) }}" class="card-img-top" alt="img-{{ $restaurant->id }}">
+                                                <img src="{{ asset('storage/' . $restaurant->img) }}" class="card-img-top"
+                                                    alt="img-{{ $restaurant->id }}">
                                             @else
                                                 <img src="https://beachlife.com/image/wiser2/1445570/sfeer_afbeeldingen/730/1009/6/beachlife-black-embroidery-bikinitop-109a-bikinibroekje-206b-top-jpg-8.jpg"
                                                     alt="no-image">
                                             @endif
                                             <div class="card-body">
-                                                <h5 class="card-title">{{ $restaurant->name }}</h5>
+                                                <h5 class="card-title">{{ $restaurant->name_restaurant }}</h5>
                                                 <p class="card-text">{{ $restaurant->address }}</p>
                                                 <p class="card-text">{{ $restaurant->phone_number }}</p>
                                                 <p>
@@ -39,17 +40,8 @@
                                                         <span>{{ $type->name_type }}</span>
                                                     @endforeach
                                                 </p>
-                                                <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Lista Piatti</a>
-                                                {{-- delete --}}
-                                                <form action="{{ route('admin.restaurants.destroy', $restaurant) }}" method="POST" class="d-inline">
-                                                    <!--token-->
-                                                    @csrf
-                                                    <!--/token-->
-                                                    <!--method per cancellare-->
-                                                    @method('DELETE')
-                                                    <!--/method per cancellare-->
-                                                    <button class="btn btn-danger">Elimina</button>
-                                                </form>
+                                                <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Lista
+                                                    Piatti</a>
                                             </div>
                                         </div>
                                     </div>
