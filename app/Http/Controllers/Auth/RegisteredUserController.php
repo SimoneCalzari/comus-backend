@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Type;
 use App\Models\User;
+use App\Models\Restaurant;
 use App\Providers\RouteServiceProvider;
+use App\Http\Requests\StoreRestaurantRequest;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -20,7 +23,9 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+
+        $types = Type::all();
+        return view('auth.register', compact('types'));
     }
 
     /**
@@ -28,13 +33,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreRestaurantRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $data = $request->validated();
 
         $user = User::create([
             'name' => $request->name,
@@ -42,10 +43,28 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $restaurant = new Restaurant();
+        $restaurant->fill($data);
+        $restaurant->slug = Str::of($restaurant->name)->slug('-');
+        if (!empty($data['img'])) {
+            $restaurant->img = Storage::put('uploads', $data['img']);
+        }
+
+        $restaurant->user_id = $user->id;
+
+        $restaurant->save();
+
+        if (isset($data['types'])) {
+            $restaurant->types()->sync($data['types']);
+        }
+
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+
+
+
+        return redirect(RouteServiceProvider::HOME)->with('new_restaurant', "Il ristorante $restaurant->name  è stato aggiunto ai tuoi ristoranti");
     }
 }
