@@ -21,7 +21,8 @@ class DishController extends Controller
     {
         $restaurants = Restaurant::where('user_id', Auth::user()->id)->first();
         $dishes = Dish::where('restaurant_id', $restaurants->id)->get();
-        return view('admin.dishes.index', compact('dishes'));
+        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+        return view('admin.dishes.index', compact('dishes', 'restaurants_passare'));
     }
 
     /**
@@ -30,7 +31,8 @@ class DishController extends Controller
     public function create()
 
     {
-        return view('admin.dishes.create');
+        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+        return view('admin.dishes.create', compact('restaurants_passare'));
     }
 
 
@@ -66,14 +68,18 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view('admin.dishes.show', compact('dish'));
+        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+
+        return view('admin.dishes.show', compact('dish', 'restaurants_passare'));
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Dish $dish)
     {
-        return view('admin.dishes.edit', compact('dish'));
+        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+
+        return view('admin.dishes.edit', compact('dish', 'restaurants_passare'));
     }
 
     /**
