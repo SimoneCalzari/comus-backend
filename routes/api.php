@@ -24,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/types', [TypeController::class, 'index']);
 // rotta api per prendere tutti i ristoranti con i tipi
 Route::get('/restaurants', [RestaurantController::class, 'index']);
+// rotta per prendere i ristoranti della categoria passata
+Route::get('/restaurants/search/{type}', [RestaurantController::class, 'search']);
