@@ -16,43 +16,43 @@ class TypeSeeder extends Seeder
         $types =  [
             [
                 "name" => "Sushi",
-                "image" => "img\sushi.jpg",
+                "image" => "uploads/img/sushi.jpg",
             ],
             [
                 "name" => "Fast Food",
-                "image" => "img\sushi.jpg",
+                "image" => "uploads/img/fast-food.jpg",
             ],
             [
-                "name" => "Pizza",
-                "image" => "img\sushi.jpg",
+                "name" => "Pizzeria",
+                "image" => "uploads/img/pizza.jpg",
             ],
             [
                 "name" => "Cinese",
-                "image" => "img\sushi.jpg",
+                "image" => "uploads/img/cinese.jpg",
             ],
             [
                 "name" => "Messicano",
-                "image" => "img\sushi.jpg",
+                "image" => "uploads/img/messicano.jpg",
             ],
             [
                 "name" => "Italiano",
-                "image" => "img\sushi.jpg",
+                "image" => "uploads/img/italiano.jpg",
             ],
             [
-                "name" => "Hamburger",
-                "image" => "img\sushi.jpg",
+                "name" => "Steakhouse",
+                "image" => "uploads/img/steakhouse.jpg",
             ],
             [
-                "name" => "Caffè",
-                "image" => "img\sushi.jpg",
+                "name" => "Pesce",
+                "image" => "uploads/img/pesce.jpg",
             ],
             [
-                "name" => "Gelateria",
-                "image" => "img\sushi.jpg",
+                "name" => "Kebab",
+                "image" => "uploads/img/kebab.jpg",
             ],
             [
-                "name" => "Vegetariano",
-                "image" => "img\sushi.jpg",
+                "name" => "Gluten Free",
+                "image" => "uploads/img/gluten-free.jpg",
             ],
         ];
 
