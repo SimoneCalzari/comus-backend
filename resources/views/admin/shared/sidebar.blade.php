@@ -5,15 +5,16 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-selected' : '' }}" href="{{ route('admin.dashboard') }}">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-selected' : '' }}"
+                                    href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-table-columns me-1"></i> Area amministrazione
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.create' ? 'bg-selected' : '' }}" href="{{ route('admin.dishes.create') }}">
                                     <i class="fa-solid fa-utensils me-1"></i> Crea piatto
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </nav>

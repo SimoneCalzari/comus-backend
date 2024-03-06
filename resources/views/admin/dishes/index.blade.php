@@ -104,7 +104,7 @@
         </tbody>
     </table>
     @endif
-
-
-
+    <div class="text-center">
+        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un piatto</a>
+    </div>
 @endsection
