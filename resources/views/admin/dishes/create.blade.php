@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="go-back">
-        <a href="{{ route('admin.dashboard') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
+        <a href="{{ route('admin.dishes.index') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
     </div>
     <div class="container pb-5">
         <header>

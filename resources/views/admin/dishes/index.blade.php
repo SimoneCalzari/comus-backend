@@ -15,7 +15,6 @@
 
     <div class="container d-flex justify-content-center mt-5">
         @if ($dishes->count() < 1)
-            <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi Piatti</a>
         @else
     </div>
     <table class="table">
