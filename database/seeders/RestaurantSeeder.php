@@ -78,6 +78,7 @@ class RestaurantSeeder extends Seeder
             $restaurant_new->img = $restaurant['img'];
 
             $restaurant_new->save();
+            $restaurant_new->types()->attach($restaurant['types']);
         }
     }
 }
