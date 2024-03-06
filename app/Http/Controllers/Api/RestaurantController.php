@@ -10,10 +10,10 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $types = Restaurant::with('types')->get();
+        $restaurants = Restaurant::with('types')->get();
         return response()->json([
             'success' => true,
-            'results' => $types
+            'results' => $restaurants
         ]);
     }
 }
