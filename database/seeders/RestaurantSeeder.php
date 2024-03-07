@@ -33,7 +33,7 @@ class RestaurantSeeder extends Seeder
                 "address" => "Via Italia, 11",
                 "phone_number" => "3204789654",
                 "VAT" => "00487965413",
-                "img" => "uploads/img/sushi.jpg",
+                "img" => "uploads/img/hokkaido.jpg",
                 "types" => [1, 4],
             ],
             [
