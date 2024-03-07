@@ -42,6 +42,12 @@ class RestaurantController extends Controller
     {
         // tutti i ristoranti con i tipi
         $restaurants = Restaurant::with('types')->get();
+        if (!$type) {
+            return response()->json([
+                'success' => false,
+                'results' => $restaurants
+            ]);
+        }
         // array dove salvo i ristoranti col tipo cercato
         $restaurants_searched = [];
         // ciclo su tutti i ristoranti, oggetti della collezione restaurants
