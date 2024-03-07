@@ -24,7 +24,7 @@ class RestaurantSeeder extends Seeder
                 "address" => "Via Roma, 22",
                 "phone_number" => "3517776661",
                 "VAT" => "15454684512",
-                "img" => "img/mc_food.jpg",
+                "img" => "uploads/img/mc_food.jpg",
                 "types" => [2],
             ],
             [
@@ -33,16 +33,16 @@ class RestaurantSeeder extends Seeder
                 "address" => "Via Italia, 11",
                 "phone_number" => "3204789654",
                 "VAT" => "00487965413",
-                "img" => "img/sushi.jpg",
+                "img" => "uploads/img/sushi.jpg",
                 "types" => [1, 4],
             ],
             [
                 "user_id" => 3,
                 "name_restaurant" => "Pizzeria La Pergola",
                 "address" => "Via della Moscova, 20",
-                "phone_number" => "+39 3517776662",
+                "phone_number" => "3517776662",
                 "VAT" => "15454684513",
-                "img" => "img/la_pergola.jpg",
+                "img" => "uploads/img/la_pergola.jpg",
                 "types" => [3, 6],
             ],
             [
@@ -51,7 +51,7 @@ class RestaurantSeeder extends Seeder
                 "address" => "Via Stella, 22",
                 "phone_number" => "38014567963",
                 "VAT" => "15454684514",
-                "img" => "img/osteria_francescana.jpg",
+                "img" => "uploads/img/osteria_francescana.jpg",
                 "types" => [6, 8],
             ],
             [
@@ -60,7 +60,7 @@ class RestaurantSeeder extends Seeder
                 "address" => "Via Liguria, 1",
                 "phone_number" => "3517778965",
                 "VAT" => "15454684515",
-                "img" => "img/le_calandre.jpg",
+                "img" => "uploads/img/le_calandre.jpg",
                 "types" => [5, 10],
             ],
         ];
