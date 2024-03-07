@@ -30,7 +30,7 @@ class RestaurantController extends Controller
             ]);
         }
         // se ho trovato il ristorante mi prendo anche i suoi piatti 
-        $dishes = Dish::where('restaurant_id', $restaurant->id)->get();
+        $dishes = Dish::where('restaurant_id', $restaurant->id)->orderBy('name')->get();
         // restituisco ristorante e piatti
         return response()->json([
             'success' => true,
