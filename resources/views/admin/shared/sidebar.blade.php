@@ -10,11 +10,11 @@
                                     <i class="fa-solid fa-table-columns me-1"></i> Area amministrazione
                                 </a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.create' ? 'bg-selected' : '' }}" href="{{ route('admin.dishes.create') }}">
-                                    <i class="fa-solid fa-utensils me-1"></i> Crea piatto
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="http://127.0.0.1:8000/">
+                                    <i class="fa-solid fa-backward me-2"></i>Area Benvenuto
                                 </a>
-                            </li> --}}
+                            </li>
                         </ul>
                     </div>
                 </nav>

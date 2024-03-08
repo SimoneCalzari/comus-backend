@@ -42,9 +42,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <div class="logo_laravel">
-                            <img class="w-100" src="/img/comus.svg" alt="logo">
-                        </div>
+                        <li>
+                            <a href="http://127.0.0.1:8000/">
+                                <div class="logo_laravel">
+                                    <img class="w-100" src="/img/comus.svg" alt="logo">
+                                </div>
+                            </a>
+
+                        </li>
+                        <li class="ms-3 nav-item">
+                            <a href="http://localhost:5174/" class="nav-link">Area Pubblica</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

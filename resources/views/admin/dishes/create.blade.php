@@ -1,12 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="go-back">
-        <a href="{{ route('admin.dishes.index') }}"><i class="fa-solid fa-arrow-left"></i> indietro</a>
-    </div>
     <div class="container pb-5">
-        <header>
-            <h2 class="text-center text-uppercase py-4">Aggiungi un nuovo piatto</h2>
+        <header class="d-flex justify-content-between align-items-center py-3">
+            <h2 class="text-center text-uppercase ">Aggiungi un nuovo piatto</h2>
+            <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i>Lista
+                piatti</a>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
 

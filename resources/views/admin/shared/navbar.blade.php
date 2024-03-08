@@ -11,6 +11,7 @@
         </button>
     </div>
     <div class="navbar-nav">
+
         <div class="nav-item text-nowrap ms-2">
             <a class="nav-link pe-2 text-white" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -21,5 +22,6 @@
                 @csrf
             </form>
         </div>
+
     </div>
 </header>
