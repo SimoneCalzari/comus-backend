@@ -38,24 +38,42 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function search(string $type)
+    public function search(string $types)
     {
-        // tutti i ristoranti con i tipi
-        $restaurants = Restaurant::with('types')->get();
-        if (!$type) {
+        // Dividi la stringa dei tipi in un array utilizzando la virgola come separatore
+        $typesArray = explode(',', $types);
+
+        // Rimuovi eventuali tipi vuoti o non validi
+        $typesArray = array_filter($typesArray, 'intval');
+
+        // Se non ci sono tipi specificati, restituisci tutti i ristoranti
+        if (empty($typesArray)) {
+            $restaurants = Restaurant::with('types')->get();
             return response()->json([
-                'success' => false,
+                'success' => true,
                 'results' => $restaurants
             ]);
         }
-        // array dove salvo i ristoranti col tipo cercato
+
+        // Carica tutti i ristoranti con i tipi associati
+        $restaurants = Restaurant::with('types')->get();
+
+        // Array dove verranno memorizzati i ristoranti che corrispondono a tutti i tipi cercati
         $restaurants_searched = [];
-        // ciclo su tutti i ristoranti, oggetti della collezione restaurants
+
+        // Ciclo su tutti i ristoranti
         foreach ($restaurants as $restaurant) {
-            // salvo in una variabile il risultato della ricerca per tipo, se non trova da null che sfrutto nella condizione sotto
-            $current_restaurant = $restaurant->types()->where('type_id', $type)->first();
-            if ($current_restaurant) {
-                // pusho nell'array solo i ristoranti del tipo cercato
+            // Verifica se il ristorante soddisfa tutti i tipi cercati
+            $matchesAllTypes = true;
+            foreach ($typesArray as $type) {
+                $current_restaurant = $restaurant->types()->where('type_id', $type)->first();
+                if (!$current_restaurant) {
+                    $matchesAllTypes = false;
+                    break;
+                }
+            }
+            // Se il ristorante soddisfa tutti i tipi cercati, aggiungilo all'array risultante
+            if ($matchesAllTypes) {
                 array_push($restaurants_searched, $restaurant);
             }
         }
