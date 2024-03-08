@@ -68,18 +68,24 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
-
-        return view('admin.dishes.show', compact('dish', 'restaurants_passare'));
+        $current_restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        if ($dish->restaurant_id === $current_restaurant->id) {
+            $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+            return view('admin.dishes.show', compact('dish', 'restaurants_passare'));
+        }
+        return view('errors.404');
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Dish $dish)
     {
-        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
-
-        return view('admin.dishes.edit', compact('dish', 'restaurants_passare'));
+        $current_restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        if ($dish->restaurant_id === $current_restaurant->id) {
+            $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+            return view('admin.dishes.edit', compact('dish', 'restaurants_passare'));
+        }
+        return view('errors.404');
     }
 
     /**

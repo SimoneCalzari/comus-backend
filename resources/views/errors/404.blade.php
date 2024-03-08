@@ -25,8 +25,12 @@
 
 <body class="vh-100">
     <main class="h-100 d-flex flex-column justify-content-center align-items-center">
-        <h1>La pagina cercata non esiste</h1>
-        <a href="/" class="btn btn-primary">Torna alla Home</a>
+        <h1 class="mb-3">La pagina cercata non esiste</h1>
+        <div>
+            <a href="/" class="btn btn-secondary me-3">Torna all'Area Benvenuto</a>
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">Torna all'Area Riservata</a>
+        </div>
+
     </main>
 </body>
 
