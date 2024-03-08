@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
 
         $restaurant = new Restaurant();
         $restaurant->fill($data);
-        $restaurant->slug = Str::of($restaurant->name)->slug('-');
+        $restaurant->slug = Str::of($restaurant->name_restaurant)->slug('-');
         if (!empty($data['img'])) {
             $restaurant->img = Storage::put('uploads', $data['img']);
         }
