@@ -41,6 +41,10 @@ class StoreRestaurantRequest extends FormRequest
     {
         return [
 
+            'name.required' => 'Il nome è obbligatorio.',
+            'name.max' => 'Il nome non può superare :max caratteri.',
+            'password.confirmed' => 'La password non è uguale',
+            'password.required' => 'La password è obbligatoria',
             'name_restaurant.required' => 'Il nome è obbligatorio.',
             'name_restaurant.max' => 'Il nome non può superare :max caratteri.',
             'address.required' => 'L\' indirizzo è obbligatorio.',

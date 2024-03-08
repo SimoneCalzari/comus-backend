@@ -9,6 +9,44 @@
             <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning"><i
                     class="fa-solid fa-pen-to-square me-2"></i>Modifica
                 piatto</a>
+            <form action="{{ route('admin.dishes.destroy', $dish) }}" method="POST" class="d-inline">
+                <!--token-->
+                @csrf
+                <!--/token-->
+                <!--method per cancellare-->
+                @method('DELETE')
+                <!--/method per cancellare-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto">
+                    <i class="fa-solid fa-trash-can me-2"></i>Elimina
+                </button>
+                <!-- Modal -->
+                <div class="modal fade bg-black " id="piatto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5 text-danger " id="exampleModalLabel">
+                                    ATTENZIONE</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-start ">
+                                <h2 class="text-danger text-uppercase">sei sicuro di voler cancellare
+                                    {{ $dish->name }}?</h2>
+                                <span class="text-danger">Una volta cancellato il piatto,
+                                    non
+                                    sarà più
+                                    possibile recuperarlo.</span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                <button type="submit" class="btn btn-danger">Elimina</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </header>
     <div class="container d-flex flex-column align-items-center">

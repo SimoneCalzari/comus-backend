@@ -69,15 +69,11 @@
                                 <!--method per cancellare-->
                                 @method('DELETE')
                                 <!--/method per cancellare-->
-                                {{-- <button class="btn btn-danger">Elimina</button> --}}
-
-
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#piatto-{{ $loop->index }}">
                                     <i class="fa-solid fa-trash-can me-2"></i>Elimina
                                 </button>
-
                                 <!-- Modal -->
                                 <div class="modal fade bg-black " id="piatto-{{ $loop->index }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
