@@ -8,14 +8,8 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    // public function store(StoreOrderRequest $request)
     public function store()
     {
-        //  {
-        //     formData: this.formData,
-        //     cart: this.store.cart,
-        //     totalPrice: this.store.totalPrice,
-        //   };
         $data = request()->all();
         $order = new Order();
         $order->restaurant_id = $data['cart'][0]['restaurant_id'];
@@ -25,11 +19,13 @@ class OrderController extends Controller
         $order->final_price = $data['totalPrice'];
         $order->save();
 
-        $dishes_ids = [];
-        foreach ($data['cart'] as $dish) {
-            array_push($dishes_ids, $dish->id);
-        }
 
-        $order->dishes()->sync($dishes_ids);
+        foreach ($data['cart'] as $dish) {
+            $order->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+        };
+        return response()->json([
+            'status' => true,
+            'message' => 'L\'ordine è avvenuto con successo'
+        ]);
     }
 }
