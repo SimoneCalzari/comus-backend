@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
@@ -28,3 +29,5 @@ Route::get('/restaurants', [RestaurantController::class, 'index']);
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 // rotta per prendere i ristoranti della categoria passata
 Route::get('/restaurants/search/{types}', [RestaurantController::class, 'search']);
+// rotta per prendere 
+Route::post('/orders', [OrderController::class, 'store']);
