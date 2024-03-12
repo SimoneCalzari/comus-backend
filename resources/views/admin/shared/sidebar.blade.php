@@ -11,6 +11,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-selected' : '' }}"
+                                    href="{{ route('admin.orders.index') }}">
+                                    <i class="fa-solid fa-table-columns me-1"></i> Area ordini
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-white" href="http://127.0.0.1:8000/">
                                     <i class="fa-solid fa-backward me-2"></i>Area Benvenuto
                                 </a>

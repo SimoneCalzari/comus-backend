@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Dish;
+use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,7 +17,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $restaurants = Restaurant::where('user_id', Auth::user()->id)->first();
+        $orders = Order::where('restaurant_id', $restaurants->id)->get();
+        $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+        return view('admin.orders.index', compact('orders', 'restaurants_passare'));
     }
 
     /**
@@ -38,7 +44,12 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $current_restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        if ($order->restaurant_id === $current_restaurant->id) {
+            $restaurants_passare = Restaurant::where('user_id', Auth::user()->id)->get();
+            return view('admin.orders.show', compact('order', 'restaurants_passare'));
+        }
+        return view('errors.404');
     }
 
     /**

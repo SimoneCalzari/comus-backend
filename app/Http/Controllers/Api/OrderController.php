@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
 use App\Models\Order;
+use DateTime;
 
 class OrderController extends Controller
 {
@@ -15,6 +16,7 @@ class OrderController extends Controller
         $order->restaurant_id = $data['cart'][0]['restaurant_id'];
         $order->customer_name = $data['formData']['customer_name'];
         $order->email = $data['formData']['email'];
+        $order->date = new DateTime();
         $order->delivery_address = $data['formData']['delivery_address'];
         $order->final_price = $data['totalPrice'];
         $order->save();
