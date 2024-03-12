@@ -36,7 +36,6 @@
             <tbody>
                 @foreach ($orders as $order)
                     <tr>
-                        {{-- <td>{{ $order->id }}</td> --}}
                         <td>{{ substr($order->date, 8, 2) . '-' . substr($order->date, 5, 3) . substr($order->date, 0, 4) }}
                         </td>
                         <td>{{ substr($order->date, 11, 5) }}</td>

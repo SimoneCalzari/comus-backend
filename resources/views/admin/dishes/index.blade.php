@@ -43,11 +43,6 @@
                         <td>{{ $dish->name }}</td>
                         <td>{{ $dish->price }} €</td>
                         <td>
-                            {{-- @if ($dish->img)
-                                <span class="badge text-bg-success">Allegato</span>
-                            @else
-                                <span class="badge text-bg-warning">Nessuna Immagine</span>
-                            @endif --}}
                         </td>
                         <td class>
                             @if ($dish->is_visible == '1')
