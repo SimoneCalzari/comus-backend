@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
+use App\Mail\NewContact;
 use App\Models\Order;
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -26,6 +28,10 @@ class OrderController extends Controller
         foreach ($data['cart'] as $dish) {
             $order->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
         };
+
+        //invio mail/notifica a utente che ordina
+        Mail::to($order->email)->send(new NewContact($order));
+        
         return response()->json([
             'status' => true,
             'message' => 'L\'ordine è avvenuto con successo'
