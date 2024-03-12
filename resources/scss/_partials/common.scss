@@ -35,3 +35,12 @@ COMMON
 .admin-bg {
     background-color: $white;
 }
+
+.cont-img-list {
+    width: 100px;
+    height: 100px;
+
+    img {
+        width: 100%;
+    }
+}

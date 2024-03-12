@@ -42,6 +42,13 @@
                         <td>{{ $dish->name }}</td>
                         <td>{{ $dish->price }} €</td>
                         <td>
+                            <div class="cont-img-list d-flex align-items-center justify-content-center">
+                                @if ($dish->img)
+                                    <img src="{{ asset('storage/' . $dish->img) }}" alt="{{ $dish->name }}">
+                                @else
+                                    <i class="fa-solid fa-xmark fs-2 text-danger"></i>
+                                @endif
+                            </div>
                         </td>
                         <td class>
                             @if ($dish->is_visible == '1')
@@ -51,11 +58,9 @@
                             @endif
                         </td>
                         <td class="text-end">
-                            <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-info"><i
-                                    class="fa-solid fa-circle-info me-2"></i>Dettaglio piatto</a>
+                            <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-info"><i class="fa-solid fa-circle-info me-2"></i>Dettaglio piatto</a>
 
-                            <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning" role="button"><i
-                                    class="fa-solid fa-pen-to-square me-2"></i>Modifica</a>
+                            <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning" role="button"><i class="fa-solid fa-pen-to-square me-2"></i>Modifica</a>
                             <form action="{{ route('admin.dishes.destroy', $dish) }}" method="POST" class="d-inline">
                                 <!--token-->
                                 @csrf
@@ -64,20 +69,17 @@
                                 @method('DELETE')
                                 <!--/method per cancellare-->
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                    data-bs-target="#piatto-{{ $loop->index }}">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto-{{ $loop->index }}">
                                     <i class="fa-solid fa-trash-can me-2"></i>Elimina
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade bg-black " id="piatto-{{ $loop->index }}" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade bg-black " id="piatto-{{ $loop->index }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5 text-danger " id="exampleModalLabel">
                                                     ATTENZIONE</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body text-start ">
                                                 <h2 class="text-danger text-uppercase">sei sicuro di voler cancellare
@@ -88,8 +90,7 @@
                                                     possibile recuperarlo.</span>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Chiudi</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                                 <button type="submit" class="btn btn-danger">Elimina</button>
                                             </div>
                                         </div>
