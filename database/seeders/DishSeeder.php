@@ -305,7 +305,7 @@ class DishSeeder extends Seeder
                 "name" => "Burrito",
                 "ingredients" => "Tortilla di farina, carne, fagioli, riso, formaggio, salsa",
                 "price" => 7, 00,
-                "img" => "uploads//burrito.jpg",
+                "img" => "uploads/img/burrito.jpg",
             ],
             [
                 "restaurant_id" => 5,
