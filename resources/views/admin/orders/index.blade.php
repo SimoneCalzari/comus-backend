@@ -23,8 +23,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Id Ordine</th>
+                    {{-- <th scope="col">Id Ordine</th> --}}
                     <th scope="col">Data</th>
+                    <th scope="col">Ora</th>
                     <th scope="col">Nome utente</th>
                     <th scope="col">Email</th>
                     <!--bottoni-->
@@ -35,8 +36,10 @@
             <tbody>
                 @foreach ($orders as $order)
                     <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->date }} </td>
+                        {{-- <td>{{ $order->id }}</td> --}}
+                        <td>{{ substr($order->date, 8, 2) . '-' . substr($order->date, 5, 3) . substr($order->date, 0, 4) }}
+                        </td>
+                        <td>{{ substr($order->date, 11, 5) }}</td>
                         <td>{{ $order->customer_name }} </td>
                         <td>{{ $order->email }} </td>
 
