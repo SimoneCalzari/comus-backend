@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
-use App\Mail\NewContact;
+use App\Mail\NewOrderRestaurant;
+use App\Mail\NewOrderUser;
 use App\Models\Order;
+use App\Models\Restaurant;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Support\Facades\Mail;
@@ -30,8 +32,12 @@ class OrderController extends Controller
         };
 
         //invio mail/notifica a utente che ordina
-        Mail::to($order->email)->send(new NewContact($order));
-        
+        Mail::to($order->email)->send(new NewOrderUser($order));
+
+        // invio mail/notifica al ristoratore
+        $restaurant = Restaurant::where('id', $order->restaurant_id)->first();
+        Mail::to($restaurant->user->email)->send(new NewOrderRestaurant($order));
+
         return response()->json([
             'status' => true,
             'message' => 'L\'ordine è avvenuto con successo'

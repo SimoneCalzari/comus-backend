@@ -10,10 +10,10 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 
-class NewContact extends Mailable
+class NewOrderUser extends Mailable
 {
     use Queueable, SerializesModels;
-        public $lead;
+    public $lead;
     /**
      * Create a new message instance.
      */
@@ -27,10 +27,10 @@ class NewContact extends Mailable
      */
     public function envelope(): Envelope
     {
-        return new Envelope(    
+        return new Envelope(
 
             replyTo: $this->lead->address,
-            subject: 'Nuovo Ordine',
+            subject: 'Nuovo Ordine Accettato',
         );
     }
 
@@ -40,7 +40,7 @@ class NewContact extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mails.new-order-mail',
+            view: 'mails.new-order-user-mail',
         );
     }
 
