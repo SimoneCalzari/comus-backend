@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
 use App\Models\Order;
 use DateTime;
+use DateTimeZone;
 
 class OrderController extends Controller
 {
@@ -16,7 +17,7 @@ class OrderController extends Controller
         $order->restaurant_id = $data['cart'][0]['restaurant_id'];
         $order->customer_name = $data['formData']['customer_name'];
         $order->email = $data['formData']['email'];
-        $order->date = new DateTime();
+        $order->date = new DateTime('now', new DateTimeZone('Europe/Rome'));
         $order->delivery_address = $data['formData']['delivery_address'];
         $order->final_price = $data['totalPrice'];
         $order->save();
