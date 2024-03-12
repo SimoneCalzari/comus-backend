@@ -5,7 +5,8 @@
     <header class="d-flex justify-content-between align-items-center py-3">
         <a href="{{ route('admin.dashboard') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i>Area
             amministrazione</a>
-        <h2 class="text-center text-uppercase">Lista Ordini</h2>
+        <h2 class="text-uppercase">Lista Ordini</h2>
+        <div></div>
     </header>
 
     {{-- pop up --}}
