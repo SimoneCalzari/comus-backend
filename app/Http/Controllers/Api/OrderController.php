@@ -20,6 +20,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->restaurant_id = $data['cart'][0]['restaurant_id'];
         $order->customer_name = $data['formData']['customer_name'];
+        $order->phone_number = $data['formData']['phone_number'];
         $order->email = $data['formData']['email'];
         $order->date = new DateTime('now', new DateTimeZone('Europe/Rome'));
         $order->delivery_address = $data['formData']['delivery_address'];

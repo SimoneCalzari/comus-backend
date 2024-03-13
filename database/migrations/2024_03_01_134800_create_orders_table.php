@@ -17,6 +17,7 @@ return new class extends Migration
             $table->dateTime('date')->nullable();
             $table->string('customer_name', 50);
             $table->string('email', 50);
+            $table->string('phone_number', 20);
             $table->string('delivery_address', 100)->nullable();
             $table->decimal('final_price', 5, 2)->unsigned()->nullable();
             $table->timestamps();
