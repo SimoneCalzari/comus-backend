@@ -13,6 +13,7 @@
     <p>Il suo ristorante {{ $lead->restaurant->name }} ha ricevuto un ordine da un utente con i seguenti dati:</p>
     <ul>
         <li>Nome Cognome: {{ $lead->customer_name }} </li>
+        <li>Telefono: {{ $lead->phone_number }} </li>
         <li>Indirizzo: {{ $lead->delivery_address }} </li>
         <li>Mail: {{ $lead->email }} </li>
     </ul>

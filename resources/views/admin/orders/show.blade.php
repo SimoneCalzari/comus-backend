@@ -11,6 +11,8 @@
     <p>{{ $order->customer_name }}</p>
     <h5 class="mb-0">Indirizzo</h5>
     <p>{{ $order->delivery_address }}</p>
+    <h5 class="mb-0">Telefono</h5>
+    <p>{{ $order->phone_number }}</p>
     <h5 class="mb-0">Email</h5>
     <p>{{ $order->email }}</p>
     <h5 class="mb-0">Data ordinazione</h5>
