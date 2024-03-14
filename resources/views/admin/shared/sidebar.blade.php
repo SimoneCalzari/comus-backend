@@ -7,13 +7,19 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-selected' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
-                                    <i class="fa-solid fa-table-columns me-1"></i> Area amministrazione
+                                    <i class="fa-solid fa-user-tie me-1"></i> Area amministrazione
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.index' ? 'bg-selected' : '' }}"
+                                    href="{{ route('admin.dishes.index') }}">
+                                    <i class="fa-solid fa-utensils me-1"></i> Lista Piatti
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-selected' : '' }}"
                                     href="{{ route('admin.orders.index') }}">
-                                    <i class="fa-solid fa-table-columns me-1"></i> Area ordini
+                                    <i class="fa-solid fa-list me-1"></i> Lista ordini
                                 </a>
                             </li>
                             <li class="nav-item">

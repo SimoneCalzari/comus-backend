@@ -37,7 +37,16 @@
                 </tr>
             @endforeach
             <tr>
-                <th colspan="2">Totale Ordine</th>
+                <th>Totale</th>
+                <th>
+                    @php
+                        $total_dishes = 0;
+                        foreach ($order->dishes as $dish) {
+                            $total_dishes += $dish->pivot->quantity;
+                        }
+                        echo $total_dishes;
+                    @endphp
+                </th>
                 <th>{{ $order->final_price }} €</th>
             </tr>
         </tbody>

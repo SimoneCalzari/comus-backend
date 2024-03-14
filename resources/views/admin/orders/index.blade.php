@@ -29,6 +29,8 @@
                     <th scope="col">Ora</th>
                     <th scope="col">Nome utente</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Piatti</th>
+                    <th scope="col">Conto</th>
                     <!--bottoni-->
                     <th scope="col"></th>
                     <!--/bottoni-->
@@ -42,11 +44,21 @@
                         <td>{{ substr($order->date, 11, 5) }}</td>
                         <td>{{ $order->customer_name }} </td>
                         <td>{{ $order->email }} </td>
-
+                        <td>
+                            @php
+                                $total_dishes = 0;
+                                foreach ($order->dishes as $dish) {
+                                    $total_dishes += $dish->pivot->quantity;
+                                }
+                                echo $total_dishes;
+                            @endphp
+                        </td>
+                        <td>{{ $order->final_price }} €</td>
                         <td class="text-end">
                             <a href="{{ route('admin.orders.show', $order) }}" class="btn btn-info"><i
                                     class="fa-solid fa-circle-info me-2"></i>Dettaglio ordine</a>
                         </td>
+
                     </tr>
                 @endforeach
             </tbody>
