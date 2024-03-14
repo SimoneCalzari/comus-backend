@@ -4,8 +4,9 @@
     <div class="container pb-5">
         <header class="d-flex justify-content-between align-items-center py-3">
             <h2 class="text-center text-uppercase ">Aggiungi un nuovo piatto</h2>
-            <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i>Lista
-                piatti</a>
+            <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i
+                    class="fa-solid fa-backward me-lg-2"></i><span class="d-none d-lg-inline">Lista
+                    piatti</span></a>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
 

@@ -41,6 +41,7 @@ COMMON
     height: 100px;
 
     img {
-        width: 100%;
+        width: 75%;
+        object-fit: cover;
     }
 }

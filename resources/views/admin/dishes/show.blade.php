@@ -2,13 +2,14 @@
 
 @section('content')
     <header class="d-flex justify-content-between align-items-center py-3">
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i>Lista
-            piatti</a>
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-lg-2"></i><span
+                class="d-none d-lg-inline">Lista
+                piatti</span></a>
         <h2 class="text-center text-uppercase">{{ $dish->name }}</h2>
-        <div class="text-center">
+        <div class="text-center d-flex gap-3 ">
             <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning"><i
-                    class="fa-solid fa-pen-to-square me-2"></i>Modifica
-                piatto</a>
+                    class="fa-solid fa-pen-to-square me-lg-2"></i><span class="d-none d-lg-inline">Modifica
+                    piatto</span></a>
             <form action="{{ route('admin.dishes.destroy', $dish) }}" method="POST" class="d-inline">
                 <!--token-->
                 @csrf
@@ -18,7 +19,7 @@
                 <!--/method per cancellare-->
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto">
-                    <i class="fa-solid fa-trash-can me-2"></i>Elimina
+                    <i class="fa-solid fa-trash-can me-lg-2"></i><span class="d-none d-lg-inline">Elimina</span>
                 </button>
                 <!-- Modal -->
                 <div class="modal fade bg-black " id="piatto" tabindex="-1" aria-labelledby="exampleModalLabel"

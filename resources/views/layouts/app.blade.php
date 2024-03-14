@@ -44,13 +44,12 @@
                     <ul class="navbar-nav me-auto">
                         <li>
                             <a href="http://127.0.0.1:8000/">
-                                <div class="logo_laravel">
+                                <div class="logo_laravel  d-none d-lg-block">
                                     <img class="w-100" src="/img/comus.svg" alt="logo">
                                 </div>
                             </a>
-
                         </li>
-                        <li class="ms-3 nav-item">
+                        <li class="ms-lg-3 nav-item">
                             <a href="http://localhost:5174/" class="nav-link">Area Pubblica</a>
                         </li>
                     </ul>
