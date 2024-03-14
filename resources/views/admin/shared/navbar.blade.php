@@ -1,12 +1,14 @@
 <header class="custom-navbar navbar navbar-dark sticky-top flex-md-nowrap p-2 shadow">
     <div class="row justify-content-between">
         @foreach ($restaurants_passare as $restaurant)
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('admin.dashboard') }}">
-                Benvenuto, {{ $restaurant->user->name }}
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('admin.dashboard') }}"><span
+                    class="d-none d-lg-inline">Benvenuto,</span>
+                {{ $restaurant->user->name }}
             </a>
         @endforeach
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>

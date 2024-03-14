@@ -3,12 +3,14 @@
 @section('content')
     <div class="container pb-5">
         <header class="d-flex justify-content-between align-items-center py-3">
-            <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i>Lista
-                piatti</a>
+            <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary"><i
+                    class="fa-solid fa-backward me-lg-2"></i><span class="d-none d-lg-inline">Lista
+                    piatti</span></a>
             <h2 class="text-center text-uppercase">modifica piatto</h2>
             <div class="text-center">
                 <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-info"><i
-                        class="fa-solid fa-circle-info me-2"></i>Dettaglio piatto</a>
+                        class="fa-solid fa-pen-to-square me-lg-2"></i><span class="d-none d-lg-inline">Modifica
+                        piatto</span></a>
             </div>
         </header>
         <p>I campi constrassegnati con * sono obbligatori</p>
