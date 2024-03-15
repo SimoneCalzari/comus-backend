@@ -2,10 +2,10 @@
 @section('content')
     <div class="jumbotron admin-bg pt-5 rounded-3">
         <div class="container py-5">
-            <div class="logo_laravel">
-                <img class="w-25" src="/img/comus.svg" alt="logo">
+            <div class="logo_laravel_admin">
+                <img class="w-25" src="/img/small-orange.svg" alt="logo">
             </div>
-            <h1 class="main-color display-5 font-primary">
+            <h1 class="display-5 font-primary">
                 Benvenuto in Comus
             </h1>
 
