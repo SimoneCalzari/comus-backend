@@ -33,9 +33,9 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-start ">
-                                <h2 class="text-danger text-uppercase">sei sicuro di voler cancellare
+                                <h2 class=" text-uppercase">sei sicuro di voler cancellare
                                     {{ $dish->name }}?</h2>
-                                <span class="text-danger">Una volta cancellato il piatto,
+                                <span>Una volta cancellato il piatto,
                                     non
                                     sarà più
                                     possibile recuperarlo.</span>
