@@ -1,0 +1,17 @@
+/************* 
+TYPOGRAPHY
+**************/
+//font google Embed code
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital@0;1&display=swap");
+
+.font-secondary {
+  font-family: "Rethink Sans", sans-serif;
+  color: $custom-secondary;
+}
+
+//font google Bevan static
+@import url("https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap");
+
+.font-primary {
+  font-family: "Bevan", serif;
+}

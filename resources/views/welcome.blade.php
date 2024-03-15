@@ -5,7 +5,7 @@
             <div class="logo_laravel">
                 <img class="w-25" src="/img/comus.svg" alt="logo">
             </div>
-            <h1 class="main-color display-5 fw-bold">
+            <h1 class="main-color display-5 font-primary">
                 Benvenuto in Comus
             </h1>
 
@@ -14,8 +14,8 @@
         </div>
         <div class="content">
             <div class="container">
-                <p>Se sei un ristoratore e vuoi essere un nostro partner, sei nel posto giusto! <br />
-                    Registrati e collabora con noi.
+                <p>
+                    Se sei un ristoratore e desideri diventare nostro partner, hai fatto la scelta giusta! <br>Unisciti a noi e collabora per creare un'esperienza culinaria straordinaria.
                 </p>
             </div>
         </div>

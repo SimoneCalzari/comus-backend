@@ -2,12 +2,20 @@
 VARIABLES - COLORS
 **************/
 
-// color
-$primary: #ee7c2f; //pumpkin
-$secondary: #2a101a; //russian violet
-$light_p: #dda885;
-$light_s: #c5a5dc;
+// colori ufficiali
+$custom-primary: #e1915c; //pumpkin
+$custom-secondary: #2a101a; //russian violet
+$custom-light: #dfb2c6;
+$custom_white: #f7f3f6; //snow
 
-// color: text e bg
-$text: #130a17;
-$white: #f7f3f6; //snow
+/************* 
+VARIABLES - SIZE
+**************/
+
+// possibilmente multipli di 8px/0.5rem
+$size-8: .5rem;
+$size-16: 1rem;
+$size-24: 1.5rem;
+$size-32: 2rem;
+$size-40: 2.5rem;
+$size-48: 3rem;
