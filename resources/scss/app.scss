@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 //importazione partials di stile
-@import "_partials/reset.scss";
 @import "_partials/variables.scss";
+@import "_partials/typography.scss";
+@import "_partials/reset.scss";
 @import "_partials/common.scss";
 @import "_partials/utilities.scss";

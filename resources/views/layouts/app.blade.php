@@ -22,10 +22,8 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body class="admin-bg">
+<body class="admin-bg font-secondary">
     <div id="app">
-
-
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
@@ -42,13 +40,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li>
+                        {{-- <li>
                             <a href="http://127.0.0.1:8000/">
                                 <div class="logo_laravel  d-none d-lg-block">
                                     <img class="w-100" src="/img/comus.svg" alt="logo">
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="ms-lg-3 nav-item">
                             <a href="http://localhost:5174/" class="nav-link">Area Pubblica</a>
                         </li>

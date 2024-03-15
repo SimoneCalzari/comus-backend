@@ -8,7 +8,7 @@
     <title>Nuova mail al ristoratore</title>
 </head>
 
-<body>
+<body class=font-secondary>
     <p>Gentile {{ $lead->restaurant->user->name }}</p>
     <p>Il suo ristorante {{ $lead->restaurant->name }} ha ricevuto un ordine da un utente con i seguenti dati:</p>
     <ul>

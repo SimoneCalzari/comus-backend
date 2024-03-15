@@ -6,16 +6,17 @@ COMMON
     margin-top: 20px;
 
     a {
-        color: $primary;
+        color: $custom-secondary;
     }
 }
 
 .main-color {
-    color: $text;
+    color: $custom-secondary;
 }
 
 .bg-selected {
-    background-color: #62466a; //trovare giusta alternativa di hover
+    background-color: #5f2b31; //trovare giusta alternativa di hover
+    border-radius: $size_8;
 }
 
 .my-admin-image {
@@ -24,16 +25,16 @@ COMMON
 
 // navbar
 .custom-sidebar {
-    background-color: $secondary;
+    background-color: $custom-secondary;
 }
 
 // sidebar
 .custom-navbar {
-    background-color: $secondary;
+    background-color: $custom-secondary;
 }
 
 .admin-bg {
-    background-color: $white;
+    background-color: $custom-white;
 }
 
 .cont-img-list {
@@ -45,3 +46,22 @@ COMMON
         object-fit: cover;
     }
 }
+
+.name-restaurant {
+    color: $custom-primary;
+}
+
+//bottone del frontend
+// .custom-btn {
+//     padding: $size-16;
+//     background-color: $custom_primary;
+//     border-radius: $size-16;
+//     color: $custom_white;
+//     border: 0px;
+//     transition: all 0.6s ease-in-out; //ovunque
+  
+//     &:hover {
+//       background-color: $custom-light;
+//     }
+//   }
+  

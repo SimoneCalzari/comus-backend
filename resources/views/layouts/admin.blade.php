@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Comus') }}</title>
 
     <!-- Fontawesome 6 cdn -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
@@ -23,7 +23,7 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body class="vh-100">
+<body class="vh-100 font-secondary">
     <div id="app" class="vh-100 d-flex flex-column">
         @include('admin.shared.navbar')
         <div class="container-fluid overflow-hidden flex-grow-1">

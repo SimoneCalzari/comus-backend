@@ -8,7 +8,7 @@
     <title>Nuova mail all'utente</title>
 </head>
 
-<body>
+<body class="font-secondary">
     <p>Gentile {{ $lead->customer_name }},</p>
     <p>Il suo ordine che comprende:</p>
     <ul>
