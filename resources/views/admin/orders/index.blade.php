@@ -3,7 +3,7 @@
 @section('content')
 
     <header class="d-flex justify-content-between align-items-center py-3">
-        <a href="{{ route('admin.dashboard') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-2"></i><span
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-primary"><i class="fa-solid fa-backward me-lg-2"></i><span
                 class="d-none d-lg-inline">Area
                 amministrazione</span></a>
         <h2 class="text-uppercase">Lista Ordini</h2>
@@ -57,7 +57,7 @@
                         <td>{{ $order->final_price }} €</td>
                         <td class="text-end">
                             <a href="{{ route('admin.orders.show', $order) }}" class="btn btn-info"><i
-                                    class="fa-solid fa-circle-info me-2"></i><span class="d-none d-lg-inline">Dettaglio
+                                    class="fa-solid fa-circle-info me-lg-2"></i><span class="d-none d-lg-inline">Dettaglio
                                     ordine</span></a>
                         </td>
 
