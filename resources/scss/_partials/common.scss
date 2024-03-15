@@ -10,6 +10,14 @@ COMMON
     }
 }
 
+.logo_laravel {
+    width: 80px;
+}
+
+.logo_laravel_admin {
+    width: 400px;
+    padding-bottom: $size_32;
+}
 .main-color {
     color: $custom-secondary;
 }
