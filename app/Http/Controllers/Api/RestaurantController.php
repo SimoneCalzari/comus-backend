@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Dish;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class RestaurantController extends Controller
 {
@@ -48,7 +49,7 @@ class RestaurantController extends Controller
 
         // Se non ci sono tipi specificati, restituisci tutti i ristoranti
         if (empty($typesArray)) {
-            $restaurants = Restaurant::with('types')->get();
+            $restaurants = Restaurant::with('types')->paginate(4);
             return response()->json([
                 'success' => true,
                 'results' => $restaurants
@@ -77,10 +78,14 @@ class RestaurantController extends Controller
                 array_push($restaurants_searched, $restaurant);
             }
         }
-
+        // paginazione personalizzata sull'array di ristoranti cercati
+        $total = count($restaurants_searched);
+        $perPage = 4;
+        $currentPage = 1;
+        $restaurants_paginated = new LengthAwarePaginator($restaurants_searched, $total, $perPage, $currentPage);
         return response()->json([
             'success' => true,
-            'results' => $restaurants_searched
+            'results' => $restaurants_paginated
         ]);
     }
 }
