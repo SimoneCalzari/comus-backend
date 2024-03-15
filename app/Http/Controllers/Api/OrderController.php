@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
-    public function store()
+    public function store(StoreOrderRequest $request)
     {
-        $data = request()->all();
+        $data = $request->validated();
         $order = new Order();
         $order->restaurant_id = $data['cart'][0]['restaurant_id'];
         $order->customer_name = $data['formData']['customer_name'];

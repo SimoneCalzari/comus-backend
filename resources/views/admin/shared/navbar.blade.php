@@ -24,6 +24,5 @@
                 @csrf
             </form>
         </div>
-
     </div>
 </header>
