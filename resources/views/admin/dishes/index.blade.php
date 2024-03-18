@@ -80,19 +80,19 @@
                                         class="d-none d-lg-inline">Elimina</span>
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade bg-black " id="piatto-{{ $loop->index }}" tabindex="-1"
+                                <div class="modal fade" id="piatto-{{ $loop->index }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 text-danger " id="exampleModalLabel">
-                                                    ATTENZIONE</h1>
+                                                <h2 class="modal-title fs-5 text-danger " id="exampleModalLabel">
+                                                    Conferma cancellazione piatto</h2>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body text-start ">
-                                                <h2 class=" text-uppercase">sei sicuro di voler cancellare
-                                                    {{ $dish->name }}?</h2>
+                                                <h4>Sei sicuro di voler cancellare
+                                                    {{ $dish->name }}?</h4>
                                                 <span>Una volta cancellato il piatto,
                                                     non
                                                     sarà più
