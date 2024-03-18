@@ -9,7 +9,7 @@
             <h2 class="text-center text-uppercase">modifica piatto</h2>
             <div class="text-center">
                 <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-info"><i
-                        class="fa-solid fa-pen-to-square me-lg-2"></i><span class="d-none d-lg-inline">Modifica
+                        class="fa-solid fa-pen-to-square me-lg-2"></i><span class="d-none d-lg-inline">Dettagli
                         piatto</span></a>
             </div>
         </header>
