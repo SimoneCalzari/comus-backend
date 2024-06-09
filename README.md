@@ -27,29 +27,66 @@
   <a href="#used-technologies">Used technologies</a>
 </p>
 
- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![screenshot](/public/img/welcome.png)
 
 ## Description
 
-Comus è una web app che permette di ordinare cibo a domicilio nella città di Napoli.
+Comus, una web-app di food delivery.
+
+⚙ Sviluppato con una meticolosa pianificazione divisa in tre fasi:
+
+-   progettazione
+-   sviluppo back-end, utilizzando Laravel 10
+-   sviluppo front-end, con VueJS e Bootstrap
+
+📱 La piattaforma è divisa in 2 sezioni, quella per i ristoratori, dal quale potranno gestire il loro ristorante, permettendo di aggiungere/modificare/eliminare i piatti e visualizzare gli ordini ricevuti; e una parte per i consumatori, che avranno la possibilità di filtrare i ristoranti, in base ai loro bisogni e aggiungendo i piatti al carrello, sarà possibile effettuare l'ordine.
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+-   install MAMP
 
-```bash
-# Clone this repository
- git clone ('link of the repository')
+    -   MAMP -> preferences -> server -> doc root (insert exercise folder path)
 
-# Go into the repository
- cd ('file name')
+-   open webStart page MAMP -> http://localhost/MAMP/index.php?language=English&page=phpinfo and check php version
+-   or check in terminal -> php -v
 
-# Install dependencies
- npm install
+-   variabili di ambiene in windows
 
-# Run the app
- npm run dev
-```
+    -   path
+    -   su una nuova riga incolla
+        -   C:\MAMP\bin\php\php8.3.1 (ultimo pezzo metti la versione corrente)
+
+-   apri php.ini
+
+    -   open webStart page MAMP -> http://localhost/MAMP/index.php?language=English&page=phpinfo and check php version
+    -   Loaded Configuration File -> copy path and paste in files
+
+    -   Per debug errori php:
+
+        -   extension=php_xdebug.dll -> remove ';'
+
+    -   add
+
+        -   xdebug.mode=development
+
+        -   xdebug.start_with_request=yes
+
+        -   xdebug.remote_enable = 1
+        -   xdebug.remote_autostart = 1
+
+-   file storage (per vedere le immagini dal backend) (slide 8 gennaio Boolean)
+
+    -   paste img folder in storage/app/public
+    -   php artisan storage:link
+
+-   create .env file
+
+    -   DB_DATABASE
+    -   DB_PASSWORD
+
+-   composer install
+    -   modify php.ini
+        -   extension=pdo_mysql
 
 ## Used technologies
 
